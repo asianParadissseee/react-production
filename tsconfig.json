@@ -11,7 +11,9 @@
     // esModuleInterop позволяет работать с пакетами, которые используют common js как с обычными пакетами с помощью import (require() module.exports) = common js
     "esModuleInterop": true,
     // настройка импорта
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    // для абсолютных импортов
+    "baseUrl": "."
   },
   "ts-node": {// доп настройка для ts-node
     "compilerOptions": {
