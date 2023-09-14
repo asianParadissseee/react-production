@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "noImplicitAny": true, // типизация без any
-    "module": "ESNext",// модульная сборка
-    "target": "es5", // версия стандарта, для поддержки большиства браузеров
+    "noImplicitAny": true,
+    // типизация без any
+    "module": "ESNext",
+    // модульная сборка
+    "target": "es5",
+    // версия стандарта, для поддержки большиства браузеров
     "jsx": "react-jsx",
     // компилятор будет обрабатывать не только  ts , но и js файлы
     "allowJs": true,
@@ -13,9 +16,15 @@
     // настройка импорта
     "allowSyntheticDefaultImports": true,
     // для абсолютных импортов
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "./src/*"
+      ]
+    }
   },
-  "ts-node": {// доп настройка для ts-node
+  "ts-node": {
+    // доп настройка для ts-node
     "compilerOptions": {
       "module": "CommonJS"
     }
