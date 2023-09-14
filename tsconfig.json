@@ -4,7 +4,7 @@
     "noImplicitAny": true, // типизация без any
     "module": "ESNext",// модульная сборка
     "target": "es5", // версия стандарта, для поддержки большиства браузеров
-    "jsx": "react",
+    "jsx": "react-jsx",
     // компилятор будет обрабатывать не только  ts , но и js файлы
     "allowJs": true,
     "moduleResolution": "node",
