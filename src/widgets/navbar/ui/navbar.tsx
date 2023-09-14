@@ -13,7 +13,6 @@ const Navbar: FC<NavbarProps> = ({className}) => {
 
     return (
         <header className={classNames(cls.navbar, {}, [])}>
-            <ThemeSwitcher className={"dfdsf"}/>
             <div className={cls.links}>
                 <AppLink theme={AppLinkTheme.SECONDARY} to={"/about"}>About</AppLink>
                 <AppLink theme={AppLinkTheme.SECONDARY} to={"/"}>Home</AppLink>
