@@ -4,7 +4,10 @@ import {BuildOptions} from "./types/config";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
-
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+    }
 // конфигурируем  лоадеры, они нужны чтобы обрабатывать файлы за рамки js (png, jpeg, jpg, css, scss)
     const typescriptLoaders = {
         test: /\.tsx?$/,
@@ -28,8 +31,18 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         ],
     }
 
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif$)/i,
+        use: [
+            {
+                loader: "file-loader"
+            }
+        ]
+    }
     return [
         typescriptLoaders,
-        cssLoaders
+        cssLoaders,
+        svgLoader,
+        fileLoader
     ]
 }
