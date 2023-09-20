@@ -1,4 +1,4 @@
-import LangSwitcher from "./ui/lang-switcher";
+import LangSwitcher from './ui/lang-switcher'
 export {
     LangSwitcher
 }

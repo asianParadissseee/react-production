@@ -1,31 +1,29 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import type webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { type BuildOptions } from './types/config'
 
-export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-
-    const svgLoader = {
+export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
+  const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack']
     }
-// конфигурируем  лоадеры, они нужны чтобы обрабатывать файлы за рамки js (png, jpeg, jpg, css, scss)
+  // конфигурируем  лоадеры, они нужны чтобы обрабатывать файлы за рамки js (png, jpeg, jpg, css, scss)
     const typescriptLoaders = {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
-    }
-
+        exclude: /node_modules/
+  }
 
     const cssLoaders = {
         test: /\.s[ac]ss$/i,
         use: [
-            options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
                     modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes(".module.")),
-                        localIdentName: options.isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]"
+                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                        localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
                     },
                 }
             },
@@ -37,7 +35,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         test: /\.(png|jpe?g|gif$)/i,
         use: [
             {
-                loader: "file-loader"
+                loader: 'file-loader'
             }
         ]
     }
@@ -46,13 +44,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
                 "plugins": [
-                    ["i18next-extract",
+                    ['i18next-extract',
                         {
-                            locales: ["ru", "en"],
+                            locales: ['ru', 'en'],
                             keyAsDefaultValue: true
                         }
                     ],
