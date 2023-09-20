@@ -4,7 +4,7 @@ import webpack from "webpack";
 import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-export function buildPlugins({paths,isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new HtmlWebpackPlugin({
             template: paths.html// template указывает что html будет использоваться как шаблон
@@ -17,8 +17,8 @@ export function buildPlugins({paths,isDev}: BuildOptions): webpack.WebpackPlugin
         }),
         new webpack.DefinePlugin({
             __IS__DEV__: JSON.stringify(isDev),
-
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin(),//чтобы не перезагружать страницу при изменении кода
 
     ]
 }

@@ -5,8 +5,8 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     return {
         port: options.port, // указываем порт
         open: true, // открывает автоматически html в браузере
-        historyApiFallback: true // позволяет проксировать запросы через корневую страницу
-
+        historyApiFallback: true, // позволяет проксировать запросы через корневую страницу
+        hot: true
     }
 
 }
