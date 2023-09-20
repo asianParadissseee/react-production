@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {classNames} from "shared/lib/class-names/class-names";
 import cls from "./navbar.module.scss"
-import AppLink, {AppLinkTheme} from "shared/ui/app-link/app-link";
+import AppLink, {AppLinkTheme} from "shared/ui/app-link/ui/app-link";
 import {ThemeSwitcher} from "shared/ui/theme-switcher";
 
 interface NavbarProps {

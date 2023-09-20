@@ -4,12 +4,11 @@ import {classNames} from "shared/lib/class-names/class-names";
 
 export enum ThemeButton {
     CLEAR = "clear",
-
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children?: ReactNode,
-    className: string,
+    className?: string,
     theme?: ThemeButton
 }
 

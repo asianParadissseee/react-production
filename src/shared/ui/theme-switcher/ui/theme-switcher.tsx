@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 import cls from "./theme-switcher.module.scss"
 import {classNames} from "shared/lib/class-names/class-names";
 import {Theme, useTheme} from "app/providers/theme-provider";
-import Button, {ThemeButton} from "shared/ui/button/button";
+import Button, {ThemeButton} from "shared/ui/button/ui/button";
 
 interface ThemeSwitcherProps {
     className?: string
