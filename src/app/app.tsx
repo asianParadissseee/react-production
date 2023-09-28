@@ -9,9 +9,6 @@ import './styles/index.scss'
 const App = () => {
     const {theme, toggleTheme} = useTheme()
 
-    useEffect(() => {
-            throw new Error()
-    }, [])
 
     return (
         <div className={classNames('app', {}, [theme])}>

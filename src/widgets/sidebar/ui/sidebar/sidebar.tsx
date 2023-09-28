@@ -18,8 +18,8 @@ const Sidebar: FC<SidebarProps> = (props) => {
         setOpen((prevState) => !prevState)
     }
     return (
-      <aside className={classNames(cls.Sidebar, { [cls.open]: open }, [className])}>
-            <Button onClick={onToggle}>
+      <aside data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.open]: open }, [className])}>
+            <Button onClick={onToggle} data-testid="sidebar-toggle">
               toggle
             </Button>
             <div className={cls.switchers}>
