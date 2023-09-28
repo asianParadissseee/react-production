@@ -55,7 +55,8 @@ module.exports = {
             markupOnly: true
         }],
         "max-len": ["error", {
-            ignoreComments: true
+            ignoreComments: true,
+            code: 100
         }]
     },
     globals: {
