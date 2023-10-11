@@ -35,17 +35,9 @@ const config: Config = {
     ],
     setupFilesAfterEnv: ["<rootDir>config/jest/setup-tests.ts"],
     moduleNameMapper: {
-        '\\.(css|scss)$': 'identity-obj-proxy',
+        '\\.s?css$': 'identity-obj-proxy',
         "\\.svg": path.resolve(__dirname, "jest-empty-component.tsx")
     },
-    transform: {
-        "^.+\\.tsx?$": "ts-jest",
-        "^.+\\.jsx?$": "babel-jest",
-        "^.+\\.scss$": "sass-loader-jest"
-    },
-    transformIgnorePatterns: [
-        "/node_modules/"
-    ],
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,

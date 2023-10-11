@@ -1,4 +1,4 @@
-import PageLoader from "./ui/page-loader";
+import PageLoader from './ui/page-loader'
 export {
     PageLoader
 }

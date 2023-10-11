@@ -1,4 +1,4 @@
-import {ErrorBoundary} from "./ui/error-boundary";
+import { ErrorBoundary } from './ui/error-boundary'
 
 export {
     ErrorBoundary
