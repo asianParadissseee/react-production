@@ -1,9 +1,18 @@
 {
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
-  "Главная страница": "Home page",
-  "Язык": "Language",
+  "Главная страница": "Main page",
+  "Язык": "English",
+  "новый перевод": "новый перевод",
   "Страница не найдена": "Page not found",
-  "Извините, произошла ошибка": "Sorry, an error has occurred",
-  "Обновить страницу": "Reload the page"
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Обновить страницу": "Reload page",
+  "throw error": "throw error",
+  "Главная": "Main",
+  "О сайте": "About us",
+  "Переключить": "Переключить",
+  "Короткий язык": "En",
+  "Войти": "Login",
+  "increment": "increment",
+  "decrement": "decrement"
 }
