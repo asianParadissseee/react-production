@@ -1,5 +1,5 @@
-import { classNames } from '../../../lib/classNames/classNames';
 import React from 'react';
+import { classNames } from '../../../lib/classNames/classNames';
 import { Theme, useTheme } from '../../../../app/providers/ThemeProvider';
 import LightIcon from '../../../assets/icons/theme-light.svg';
 import DarkIcon from '../../../assets/icons/theme-dark.svg';

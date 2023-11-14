@@ -1,9 +1,9 @@
-import {classNames} from '../../lib/classNames/classNames';
 import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import {Portal} from '../Portal/Portal';
-import {useTheme} from 'app/providers/ThemeProvider';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { classNames } from '../../lib/classNames/classNames';
+import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -22,17 +22,17 @@ export const Modal = (props: ModalProps) => {
         children,
         isOpen,
         onClose,
-        lazy
+        lazy,
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     useEffect(() => {
         if (isOpen) {
-            setIsMounted(true)
+            setIsMounted(true);
         }
     }, [isOpen]);
 
@@ -74,7 +74,7 @@ export const Modal = (props: ModalProps) => {
     };
 
     if (lazy && !isMounted) {
-        return null
+        return null;
     }
 
     return (

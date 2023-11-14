@@ -1,5 +1,5 @@
-import Input from "./ui/Input";
+import Input from './ui/Input';
 
 export {
-    Input
-}
+    Input,
+};
