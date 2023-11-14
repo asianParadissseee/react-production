@@ -1,8 +1,6 @@
-import React, { FC } from 'react';
-import { Modal } from 'shared/ui/Modal/Modal';
-import LoginForm from 'features/AuthByUsername/ui/LoginForm/LoginForm';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './LoginModal.module.scss';
+import React, {FC} from 'react';
+import {Modal} from 'shared/ui/Modal/Modal';
+import LoginForm from "../LoginForm/LoginForm";
 
 interface LoginModalProps {
     className?: string;
@@ -11,15 +9,14 @@ interface LoginModalProps {
 }
 
 const LoginModal: FC<LoginModalProps> = (props) => {
-    const { className, isOpen, onClose } = props;
+    const {className, isOpen, onClose} = props;
     return (
         <Modal
-            className={classNames(cls.LoginModal, {}, [className])}
             isOpen={isOpen}
             onClose={onClose}
             lazy
         >
-            <LoginForm />
+            <LoginForm/>
         </Modal>
     );
 };

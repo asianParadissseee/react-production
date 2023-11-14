@@ -1,20 +1,33 @@
-import React, { Suspense } from 'react';
-import { classNames } from '../shared/lib/classNames/classNames';
-import { useTheme } from './providers/ThemeProvider';
-import { AppRouter } from './providers/router';
-import { Navbar } from '../widgets/Navbar';
-import { Sidebar } from '../widgets/Sidebar';
+import React, {Suspense, useEffect} from 'react';
+import {classNames} from '../shared/lib/classNames/classNames';
+import {useTheme} from './providers/ThemeProvider';
+import {AppRouter} from './providers/router';
+import {Navbar} from '../widgets/Navbar';
+import {Sidebar} from '../widgets/Sidebar';
+import {useDispatch} from "react-redux";
+import {UserAction} from "entities/User";
 
 function App() {
-    const { theme } = useTheme();
+    const {theme} = useTheme();
+
+
+    const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        dispatch(
+            UserAction.initAuthData()
+        )
+    }, [dispatch]);
+
 
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
-                <Navbar />
+                <Navbar/>
                 <div className="content-page">
-                    <Sidebar />
-                    <AppRouter />
+                    <Sidebar/>
+                    <AppRouter/>
                 </div>
             </Suspense>
         </div>
